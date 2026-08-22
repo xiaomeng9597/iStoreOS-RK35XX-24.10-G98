@@ -890,12 +890,15 @@
 
 // gmac0: ethernet@fe1b0000 
 &gmac0 {
+	/delete-property/ snps,reset-gpio;
+	/delete-property/ snps,reset-active-low;
+	/delete-property/ snps,reset-delays-us;
 	clock_in_out = "output";
 	phy-mode = "rgmii-rxid";
 	pinctrl-0 = <&gmac0_miim &gmac0_tx_bus2 &gmac0_rx_bus2 &gmac0_rgmii_clk &gmac0_rgmii_bus>;
-	snps,reset-gpio = <&gpio3 RK_PD0 GPIO_ACTIVE_LOW>;
-	snps,reset-active-low;
-	snps,reset-delays-us = <0 20000 100000>;
+	//snps,reset-gpio = <&gpio3 RK_PD0 GPIO_ACTIVE_LOW>;
+	//snps,reset-active-low;
+	//snps,reset-delays-us = <0 20000 100000>;
 	pinctrl-names = "default";
 	status = "disabled";
 
@@ -909,12 +912,15 @@
 
 // gmac1: ethernet@fe1c0000
 &gmac1 {
+	/delete-property/ snps,reset-gpio;
+	/delete-property/ snps,reset-active-low;
+	/delete-property/ snps,reset-delays-us;
 	clock_in_out = "output";
 	phy-mode = "rgmii-rxid";
 	pinctrl-0 = <&gmac1_miim &gmac1_tx_bus2 &gmac1_rx_bus2 &gmac1_rgmii_clk &gmac1_rgmii_bus>;
-	snps,reset-gpio = <&gpio4 RK_PB3 GPIO_ACTIVE_LOW>;
-	snps,reset-active-low;
-	snps,reset-delays-us = <0 20000 100000>;
+	//snps,reset-gpio = <&gpio4 RK_PB3 GPIO_ACTIVE_LOW>;
+	//snps,reset-active-low;
+	//snps,reset-delays-us = <0 20000 100000>;
 	pinctrl-names = "default";
 	status = "disabled";
 
