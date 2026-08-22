@@ -1110,9 +1110,8 @@
 	switch@1d {
 		compatible = "motorcomm,yt9215";
 		reg = <0x1d>;
-		status = "okay";
+		status = "disabled";
 		dsa,member = <1 0>;
-		motorcomm,bdy-g98-led-profile;
 
 		mdio {
 			#address-cells = <1>;
@@ -1169,9 +1168,8 @@
 	switch@1d {
 		compatible = "motorcomm,yt9215";
 		reg = <0x1d>;
-		status = "okay";
+		status = "disabled";
 		dsa,member = <0 0>;
-		motorcomm,bdy-g98-led-profile;
 
 		mdio {
 			#address-cells = <1>;
