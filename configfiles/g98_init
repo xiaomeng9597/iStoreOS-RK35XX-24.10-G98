@@ -1,0 +1,29 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+STOP=12
+
+board_name() {
+    [ -e /tmp/sysinfo/board_name ] && cat /tmp/sysinfo/board_name || echo "generic"
+}
+
+start() {
+    local board=$(board_name)
+    case "$board" in
+        bdy,g98-nas)
+
+            if ! [ -s /etc/config/g98_init_lock ]; then
+# cat <<EOF > /etc/config/g98_init_lock
+# true
+# EOF
+                echo "true"
+            else
+                echo "false"
+            fi
+
+            ;;
+        *)
+            return 1
+            ;;
+    esac
+}
