@@ -25,10 +25,8 @@
 		mmc0 = &sdhci;
 		mmc1 = &sdmmc;
 		mmc2 = &sdio;
-		ethernet0 = &gmac0;
-		ethernet1 = &gmac1;
-		ethernet2 = &pcie_eth2;
-		ethernet3 = &pcie_eth3;
+		ethernet0 = &pcie_eth2;
+		ethernet1 = &pcie_eth3;
 	};
 
 	chosen {

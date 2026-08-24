@@ -60,7 +60,7 @@ rockchip_setup_interfaces()
 		ucidef_set_interfaces_lan_wan 'eth1 eth2 eth3 eth4 eth5' 'eth0'
 		;;
 	bdy,g98-nas)
-		ucidef_set_interfaces_lan_wan 'eth3' 'eth2'
+		ucidef_set_interfaces_lan_wan 'eth1' 'eth0'
 		;;
 	easepi,r1|easepi,r1-lite|\
 	linkease,easepi-r1)
@@ -138,11 +138,11 @@ rockchip_setup_macs()
 		wan_mac=$(macaddr_add "$(cat /sys/class/net/eth1/address)" -1)
 		;;
 	bdy,g98-nas)
-		if [ -e /sys/class/net/eth2/address ] && mac2=$(cat /sys/class/net/eth2/address 2>/dev/null); then
-			wan_mac=$(macaddr_add "$mac2" -1)
+		if [ -e /sys/class/net/eth0/address ] && mac0=$(cat /sys/class/net/eth0/address 2>/dev/null); then
+			wan_mac=$(macaddr_add "$mac0" -1)
 			lan_mac=$(macaddr_add "$wan_mac" 1)
-		elif [ -e /sys/class/net/eth3/address ] && mac3=$(cat /sys/class/net/eth3/address 2>/dev/null); then
-			wan_mac=$(macaddr_add "$mac3" -1)
+		elif [ -e /sys/class/net/eth1/address ] && mac1=$(cat /sys/class/net/eth1/address 2>/dev/null); then
+			wan_mac=$(macaddr_add "$mac1" -1)
 			lan_mac=$(macaddr_add "$wan_mac" 1)
 		fi
 		;;

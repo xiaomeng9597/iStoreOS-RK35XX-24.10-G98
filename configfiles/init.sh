@@ -330,16 +330,16 @@ board_set_iface_smp_affinity() {
 		fi
 		;;
 	bdy,g98-nas)
-		if ethtool -i eth2 | grep -Fq 'driver: r8169'; then
-			set_iface_cpumask 4 "eth2"
-			set_iface_cpumask 8 "eth3"
+		if ethtool -i eth0 | grep -Fq 'driver: r8169'; then
+			set_iface_cpumask 4 "eth0"
+			set_iface_cpumask 8 "eth1"
 		else
-			set_iface_cpumask 4 "eth2" "eth2-0" f0 && \
-			set_iface_cpumask 4 "eth2" "eth2-16" && \
-			set_iface_cpumask 2 "eth2" "eth2-18"
-			set_iface_cpumask 8 "eth3" "eth3-0" f0 && \
-			set_iface_cpumask 8 "eth3" "eth3-18" && \
-			set_iface_cpumask 1 "eth3" "eth3-16"
+			set_iface_cpumask 4 "eth0" "eth0-0" f0 && \
+			set_iface_cpumask 4 "eth0" "eth0-16" && \
+			set_iface_cpumask 2 "eth0" "eth0-18"
+			set_iface_cpumask 8 "eth1" "eth1-0" f0 && \
+			set_iface_cpumask 8 "eth1" "eth1-18" && \
+			set_iface_cpumask 1 "eth1" "eth1-16"
 		fi
 		;;
 	radxa,e52c)
